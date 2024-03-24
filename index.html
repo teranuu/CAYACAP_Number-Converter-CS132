@@ -1,0 +1,239 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>NUMBER CONVERTER</title>
+
+<head>
+
+    <link href="https://fonts.cdnfonts.com/css/karla" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli' rel='stylesheet'>
+
+<style>
+
+@media only screen and (max-width: 600px) {
+  body {
+   
+    background: hsla(154, 53%, 82%, 1);
+    background: linear-gradient(90deg, hsla(154, 53%, 82%, 1) 0%, hsla(24, 88%, 65%, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#b8e9d4", endColorstr="#f4985a", GradientType=1 );
+
+  }
+
+}
+
+body{
+    background: hsla(356, 68%, 91%, 1);
+
+background: linear-gradient(90deg, hsla(356, 68%, 91%, 1) 0%, hsla(140, 60%, 82%, 1) 50%, hsla(316, 66%, 80%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F8DADC", endColorstr="#B6EDC8", GradientType=1 );
+    
+}
+.title-num, .title-guide {
+
+    font-family: Karla, sans-serif;
+    font-weight: bold;
+    font-size: 45px;
+
+}
+.title-guide {
+
+    text-align: center;
+}
+.convert-num{
+
+
+    text-align: center;
+    margin-top: 170px;
+
+
+
+}
+label {
+
+    display: block;
+    margin-bottom: 15px;
+    font-family: Muli;
+
+}
+
+input {
+
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: grey;
+
+}
+
+.border-num {
+
+padding: 25px;
+border: 1px solid;
+margin: 40px 50px;
+
+}
+
+.dec-bin, .oct-hex{
+    margin-right: 50px;
+    margin-left: 50px;
+    display: inline-block;
+}
+
+.title-nav, .content-nav, .contact-nav{
+
+    display: inline-block;
+
+}
+
+.title-nav{
+
+margin-right: 600px;
+
+
+}
+
+nav{
+    
+        background-color: hsla(0, 0%, 20%, 0.014);
+        overflow: hidden;
+
+}
+
+nav ul{
+
+       
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        overflow: hidden;
+
+}
+
+nav ul li{
+   
+        float: left;
+
+}
+
+nav ul li a {
+      
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        transition: background-color 0.15s;
+}
+
+nav ul li a:hover {
+
+        background-color: #111; 
+        color: white;
+        opacity: 0.8;
+    
+        }
+            
+.nav-border-color{
+
+
+    border: none;
+
+}
+</style>
+
+</head>
+
+<body>
+
+    <nav class="nav-border-color">
+        <ul>
+            <li><a href="#border-num">Guide</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+<div class="convert-num">
+
+    <p class="title-num">NUMBER CONVERTER GENERATOR</p>
+    <p class="title-sub-num">Prepared by: Denn Anton Marc B. Cayacap | G4 | CSIT 132</p>
+    <p class="title-sub-desc">Made with HTML, CSS, JAVASCRIPT!</p>
+    <div class="border-num">
+        <div class="dec-bin">
+            <label for="dec-num">Decimal Conversion &#40;Base 10&#41;</label>
+            <input type="number" name=" " id="input1" placeholder="Input your number here!">
+            <label for="bin-num">Binary Conversion &#40;Base 2&#41;</label>
+            <input type="number" name=" " id="input2" placeholder="Input your number here!">
+        </div>
+    <div class="oct-hex">
+            <label for="oct-num">Octal Conversion &#40;Base 8&#41;</label>
+            <input type="number" name=" " id="input3" placeholder="Input your number here!">
+            <label for="hex-num">Hexadecimal Conversion &#40;Base 16&#41;</label>
+            <input type="text" name=" " id="input4" placeholder="Input your number here!">
+        </div>
+    </div>
+
+</div>   
+
+<div class="num-guide">
+
+    <p class="title-guide" style="margin-top: 150px;">NUMBER CONVERSION TABLE</p>
+    <p class="numba-img" style="text-align: center"><img src="numba.jpg" style="border: 1px solid;"></p>
+</div>
+</body>
+
+<script>
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const inputDecimal = document.getElementById('input1');
+    const inputBinary = document.getElementById('input2');
+    const inputOctal = document.getElementById('input3');
+    const inputHexadecimal = document.getElementById('input4');
+
+    // Function to convert decimal to other number systems
+    function convertDecimal() {
+        const decimalValue = parseInt(inputDecimal.value);
+        inputBinary.value = decimalValue.toString(2);
+        inputOctal.value = decimalValue.toString(8);
+        inputHexadecimal.value = decimalValue.toString(16).toUpperCase();
+    }
+
+    // Function to convert binary to other number systems
+    function convertBinary() {
+        const binaryValue = inputBinary.value;
+        inputDecimal.value = parseInt(binaryValue, 2);
+        inputOctal.value = parseInt(binaryValue, 2).toString(8);
+        inputHexadecimal.value = parseInt(binaryValue, 2).toString(16).toUpperCase();
+    }
+
+    // Function to convert octal to other number systems
+    function convertOctal() {
+        const octalValue = inputOctal.value;
+        inputDecimal.value = parseInt(octalValue, 8);
+        inputBinary.value = parseInt(octalValue, 8).toString(2);
+        inputHexadecimal.value = parseInt(octalValue, 8).toString(16).toUpperCase();
+    }
+
+    // Function to convert hexadecimal to other number systems
+    function convertHexadecimal() {
+        const hexadecimalValue = inputHexadecimal.value;
+        inputDecimal.value = parseInt(hexadecimalValue, 16);
+        inputBinary.value = parseInt(hexadecimalValue, 16).toString(2);
+        inputOctal.value = parseInt(hexadecimalValue, 16).toString(8);
+    }
+
+    // Event listeners for input fields
+    inputDecimal.addEventListener('input', convertDecimal);
+    inputBinary.addEventListener('input', convertBinary);
+    inputOctal.addEventListener('input', convertOctal);
+    inputHexadecimal.addEventListener('input', convertHexadecimal);
+});
+
+</script>
+</html>
