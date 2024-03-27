@@ -13,14 +13,134 @@
 
 <style>
 
-@media only screen and (max-width: 600px) {
-  body {
-   
-    background: hsla(154, 53%, 82%, 1);
-    background: linear-gradient(90deg, hsla(154, 53%, 82%, 1) 0%, hsla(24, 88%, 65%, 1) 100%);
-    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#b8e9d4", endColorstr="#f4985a", GradientType=1 );
+@media all and (max-width: 500px){
 
-  }
+body {
+
+background: hsla(356, 68%, 91%, 1);
+
+background: linear-gradient(90deg, hsla(356, 68%, 91%, 1) 0%, hsla(140, 60%, 82%, 1) 50%, hsla(316, 66%, 80%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F8DADC", endColorstr="#B6EDC8", GradientType=1 );
+     
+}
+
+.title-num, .title-guide {
+
+font-family: Karla, sans-serif;
+font-weight: bold;
+font-size: 45px;
+
+}
+.title-guide {
+
+text-align: center;
+}
+.convert-num{
+
+
+text-align: center;
+margin-top: 170px;
+
+
+
+}
+label {
+
+display: block;
+margin-bottom: 15px;
+font-family: Muli;
+
+}
+
+input {
+
+margin-bottom: 30px;
+border: none;
+border-radius: 4px;
+padding: 10px;
+background-color: grey;
+
+}
+
+.border-num {
+
+padding: 25px;
+border: 3px solid;
+margin: 40px 50px;
+
+}
+
+.dec-bin, .oct-hex{
+margin-right: 50px;
+margin-left: 50px;
+display: inline-block;
+}
+
+.title-nav, .content-nav, .contact-nav{
+
+display: inline-block;
+
+}
+
+.title-nav{
+
+margin-right: 600px;
+
+
+}
+.numba-pure-img {
+
+border: 3px solid
+
+}
+nav{
+
+    background-color: hsla(0, 0%, 20%, 0.014);
+    overflow: hidden;
+
+}
+
+nav ul{
+
+   
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    overflow: hidden;
+
+}
+
+nav ul li{
+
+    float: left;
+
+}
+
+nav ul li a {
+  
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: background-color 0.15s;
+}
+
+nav ul li a:hover {
+
+    background-color: #111; 
+    color: white;
+    opacity: 0.8;
+
+    }
+        
+.nav-border-color{
+
+
+border: none;
+
+}
 
 }
 
@@ -32,6 +152,7 @@ background: linear-gradient(90deg, hsla(356, 68%, 91%, 1) 0%, hsla(140, 60%, 82%
 filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F8DADC", endColorstr="#B6EDC8", GradientType=1 );
     
 }
+
 .title-num, .title-guide {
 
     font-family: Karla, sans-serif;
@@ -61,7 +182,9 @@ label {
 }
 
 input {
-
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
     margin-bottom: 30px;
     border: none;
     border-radius: 4px;
@@ -73,7 +196,7 @@ input {
 .border-num {
 
 padding: 25px;
-border: 1px solid;
+border: 3px solid;
 margin: 40px 50px;
 
 }
@@ -92,11 +215,22 @@ margin: 40px 50px;
 
 .title-nav{
 
-margin-right: 600px;
+    margin-right: 600px;
 
 
 }
+numba-img, img {
 
+    border: 3px solid;
+    object-fit: contain;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    width: 50%;
+    
+
+}
 nav{
     
         background-color: hsla(0, 0%, 20%, 0.014);
@@ -144,6 +278,8 @@ nav ul li a:hover {
     border: none;
 
 }
+
+
 </style>
 
 </head>
@@ -157,7 +293,7 @@ nav ul li a:hover {
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
-
+<div class="border-all" style="border: 5px solid; border-radius: 10px">
 <div class="convert-num">
 
     <p class="title-num">NUMBER CONVERTER GENERATOR</p>
@@ -183,7 +319,10 @@ nav ul li a:hover {
 <div class="num-guide">
 
     <p class="title-guide" style="margin-top: 150px;">NUMBER CONVERSION TABLE</p>
-    <p class="numba-img" style="text-align: center"><img src="numba.jpg" style="border: 1px solid;"></p>
+    <div class="numba-img">
+    <img src="numba.jpg">
+    </div>
+</div>
 </div>
 </body>
 
